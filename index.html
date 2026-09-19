@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repair Café St. Gallen</title>
+<meta name="description" content="Repair Café St. Gallen — wir reparieren gemeinsam mechanische, elektrische und elektronische Geräte. Jeden Mittwoch, Ulmenstrasse 5.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <img src="assets/logo.svg" alt="Repair Café St. Gallen Logo" class="logo">
+      <span>Repair Café St. Gallen</span>
+    </a>
+    <div class="nav-right">
+      <div class="navlinks">
+        <a href="#reparaturen">Reparaturen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#ueber">Über uns</a>
+        <a href="#neuigkeiten">Neuigkeiten</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Dunkles Design umschalten" aria-pressed="false">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/>
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="tag-label">ULMENSTRASSE 5 · JEDEN MITTWOCH 19–20 UHR</span>
+      <h1>Wir retten, was ihr fast weggeworfen hättet.</h1>
+      <p>Freiwillige Reparaturkundige kümmern sich um kaputte mechanische, elektrische und elektronische Geräte — kostenlos, gemeinsam, jede Woche mittwochs.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#kontakt">Termin anfragen</a>
+        <a class="btn ghost" href="#ablauf">So läuft's ab</a>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <img src="assets/logo.svg" alt="Repair Café St. Gallen">
+    </div>
+  </div>
+</header>
+
+<section id="reparaturen">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag-label">WAS WIR REPARIEREN</span>
+      <h2>Drei Bereiche, ein Ziel: länger nutzen statt wegwerfen.</h2>
+    </div>
+    <div class="cards" id="categoryCards">
+      <!-- populated from content.json -->
+    </div>
+  </div>
+</section>
+
+<section id="ablauf" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag-label">SO LÄUFT'S AB</span>
+      <h2>Vom kaputten Gerät zum Reparatur-Ticket.</h2>
+    </div>
+    <div class="steps">
+      <div class="step" data-n="1"><h3>Gerät mitbringen</h3><p>Mittwochs zwischen 19 und 20 Uhr, Ulmenstrasse 5 — ohne Anmeldung.</p></div>
+      <div class="step" data-n="2"><h3>Gemeinsam diagnostizieren</h3><p>Eine Reparaturkundige Person schaut sich das Problem mit dir an.</p></div>
+      <div class="step" data-n="3"><h3>Reparieren, nicht ersetzen</h3><p>Wir reparieren mit dir zusammen, nicht für dich — du lernst dabei mit.</p></div>
+      <div class="step" data-n="4"><h3>Mitnehmen oder Ersatzteil bestellen</h3><p>Fertig repariert oder mit einem Plan für fehlende Teile.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber">
+  <div class="wrap about">
+    <div>
+      <span class="tag-label">ÜBER UNS</span>
+      <h2>Eine Initiative gegen geplante Obsoleszenz.</h2>
+    </div>
+    <div>
+      <p>Das Repair Café St. Gallen ist ein offener Ort, an dem Menschen den Reparaturprozess kennenlernen und ihre eigenen Gegenstände unter Anleitung erfahrener Freiwilliger selbst reparieren. Unabhängig von Alter, Geschlecht oder Konfession.</p>
+      <p>Wir arbeiten eng mit anderen Reparaturanbietern der Region zusammen, ohne in Konkurrenz zu treten, und sind Teil des Ulmen5-Projekts, einer öffentlichen Werkstatt.</p>
+      <div class="stat-row">
+        <div class="stat"><b>Jeden Mi</b><span>19–20 Uhr geöffnet</span></div>
+        <div class="stat"><b>3</b><span>Reparaturbereiche</span></div>
+        <div class="stat"><b>0.–</b><span>Kostenlos</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="neuigkeiten" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag-label">NEUIGKEITEN</span>
+      <h2>Aktuelles aus dem Café.</h2>
+    </div>
+    <div class="news-list" id="newsList">
+      <!-- populated from content.json -->
+    </div>
+  </div>
+</section>
+
+<section id="supporters">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag-label">MIT FREUNDLICHER UNTERSTÜTZUNG VON</span>
+    </div>
+    <div class="supporters">
+      <div class="supporter-chip">Stadt St. Gallen</div>
+      <div class="supporter-chip">Ulmen5</div>
+      <div class="supporter-chip">Kanton St. Gallen</div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontakt">
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Adresse &amp; Öffnungszeiten</h3>
+      <p>Ulmenstrasse 5<br>9000 St. Gallen</p>
+      <p class="spacer">Jeden Mittwoch, 19–20 Uhr</p>
+    </div>
+    <div>
+      <h3>Kontakt</h3>
+      <p><a href="mailto:info@repaircafe-sg.ch">info@repaircafe-sg.ch</a></p>
+      <p class="spacer"><a href="#">Instagram</a> · <a href="#">Facebook</a></p>
+    </div>
+    <div>
+      <h3>Spenden</h3>
+      <p>PostFinance AG<br>CH50 0900 0000 1666 3777 7<br>Repair Café St. Gallen</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Repair Café St. Gallen</span>
+    <span>Inhalte bearbeitbar über content.json</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

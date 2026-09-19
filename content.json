@@ -1,0 +1,31 @@
+{
+  "categories": [
+    {
+      "name": "Mechanik",
+      "text": "Küchengeräte, Werkzeuge, klemmende Mechanismen.",
+      "icon": "mechanik"
+    },
+    {
+      "name": "Elektrogeräte",
+      "text": "Toaster, Wasserkocher, Staubsauger und mehr.",
+      "icon": "elektro"
+    },
+    {
+      "name": "Elektronik",
+      "text": "Laptops, Smartphones, Radios.",
+      "icon": "elektronik"
+    }
+  ],
+  "news": [
+    {
+      "date": "2025-12-19",
+      "title": "Ferienzeit",
+      "text": "Betriebsferien bis am 13. Januar 2026. Ab dem 14. Januar wieder für euch da."
+    },
+    {
+      "date": "2022-11-01",
+      "title": "Umzug an die Ulmenstrasse 5",
+      "text": "Neu Teil des Ulmen5-Projekts, einer öffentlichen Werkstatt."
+    }
+  ]
+}
