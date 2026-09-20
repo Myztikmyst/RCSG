@@ -152,7 +152,17 @@ section.alt { background: var(--paper-2); }
 .news-empty { color: var(--steel); font-size: 0.9rem; }
 
 /* SUPPORTERS */
-.supporters { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.supporters {
+  display: flex; gap: 30px; flex-wrap: wrap; align-items: center;
+  --logo-w: 200px;
+  --logo-h: 75px;
+}
+.supporter-logo {
+  width: var(--logo-w);
+  height: var(--logo-h);
+  object-fit: contain;
+  max-width: 100%;
+}
 .supporter-chip {
   padding: 14px 22px; border: 1px solid var(--border); font-family: 'IBM Plex Mono', monospace;
   font-size: 0.82rem; color: var(--steel); border-radius: 3px;
