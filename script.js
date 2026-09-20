@@ -33,29 +33,43 @@ document.addEventListener('DOMContentLoaded', function () {
     return '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">' + inner + '</svg>';
   }
 
-  // ---- Load content.json and render categories + news ----
-  // (Uses XMLHttpRequest rather than fetch for the widest possible browser support.)
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'content.json', true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState !== 4) return;
-    if (xhr.status !== 200 && xhr.status !== 0) {
-      showLoadError();
-      return;
-    }
+  // ---- Categories: still from content.json (rarely changes) ----
+  var catXhr = new XMLHttpRequest();
+  catXhr.open('GET', 'content.json', true);
+  catXhr.onreadystatechange = function () {
+    if (catXhr.readyState !== 4) return;
+    if (catXhr.status !== 200 && catXhr.status !== 0) { showCategoryError(); return; }
     try {
-      var data = JSON.parse(xhr.responseText);
+      var data = JSON.parse(catXhr.responseText);
       renderCategories(data.categories || []);
-      renderNews(data.news || []);
-    } catch (err) {
-      showLoadError();
-    }
+    } catch (e) { showCategoryError(); }
   };
-  xhr.send();
+  catXhr.send();
 
-  function showLoadError() {
+  // ---- News: from the published Google Sheet ----
+  // Replace this URL with your own opensheet.elk.sh link (Sheet ID + tab name).
+  var NEWS_SHEET_URL = 'https://opensheet.elk.sh/1_S4nSJ3yyKLvksjGRfab8XZ8AfktT91Z7UJq31VpstM/Form%20Responses%201';
+
+  var newsXhr = new XMLHttpRequest();
+  newsXhr.open('GET', NEWS_SHEET_URL, true);
+  newsXhr.onreadystatechange = function () {
+    if (newsXhr.readyState !== 4) return;
+    if (newsXhr.status !== 200 && newsXhr.status !== 0) { showNewsError(); return; }
+    try {
+      var rows = JSON.parse(newsXhr.responseText);
+      var news = rows
+        .filter(function (r) { return r.date && r.title; })
+        .map(function (r) { return { date: r.date, title: r.title, text: r.text }; });
+      renderNews(news);
+    } catch (e) { showNewsError(); }
+  };
+  newsXhr.send();
+
+  function showCategoryError() {
     document.getElementById('categoryCards').innerHTML =
       '<p class="news-empty">Inhalte konnten nicht geladen werden.</p>';
+  }
+  function showNewsError() {
     document.getElementById('newsList').innerHTML =
       '<p class="news-empty">Keine Neuigkeiten verfügbar.</p>';
   }
